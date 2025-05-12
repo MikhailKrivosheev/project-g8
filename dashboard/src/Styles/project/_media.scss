@@ -1,0 +1,12 @@
+$mediaQueriesUp: (
+  phone: 'screen',
+  tablet: 'screen and (min-width: 768px)',
+  desktop: 'screen and (min-width: 1200px)',
+  wide: 'screen and (min-width: 1735px)',
+);
+
+$mediaQueriesDown: (
+  phone: 'screen and (max-width: 767px)',
+  tablet: 'screen and (max-width: 1199px)',
+  desktop: 'screen',
+);

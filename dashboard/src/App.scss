@@ -1,0 +1,50 @@
+@import '~react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+// @import './styles/Editor.scss';
+@import 'Components/Layout/Navigation/Navigation.scss';
+@import '~filepond/dist/filepond.min.css';
+@import '~filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
+@import '~filepond-plugin-get-file/dist/filepond-plugin-get-file.min.css';
+@import '~filepond-plugin-image-overlay/dist/filepond-plugin-image-overlay.css';
+
+// @import './components/Form/Form.scss';
+
+@import './Styles/index.scss';
+
+.filepond-is-grid {
+  .filepond--item {
+    width: calc(25% - .5em);
+  }
+}
+
+.filepond--fullsize-overlay {
+  position: fixed;
+  z-index: 100000;
+}
+
+.MuiTableCell-root .MuiButton-root {
+  display: block;
+  margin-left: auto;
+}
+
+.work__url {
+  padding: 10px 10px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  position: absolute;
+  top: calc(16px + 1.33em);
+  right: 20px;
+  font-size: 1em;
+  text-decoration: none;
+  color: white;
+  background-color: #201F1E;
+}
+
+.users-export {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
+  display: block;
+  border-top: 1px solid black;
+}

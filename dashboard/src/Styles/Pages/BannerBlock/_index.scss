@@ -1,0 +1,9 @@
+.personal-area__form {
+  display: flex;
+  flex-direction: column;
+
+  button[type="submit"] {
+    margin: 0;
+    margin-left: auto;
+  }
+}

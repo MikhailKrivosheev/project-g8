@@ -1,0 +1,93 @@
+.contest-form__radio-label {
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.contest-form__type-toggle {
+  display: flex;
+  gap: 20px;
+}
+
+.contest-form__type-option {
+  width: 100%;
+  height: 80px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+
+  &--industries {
+    background-color: $gray-200;
+  }
+
+  &--advertising {
+    background: linear-gradient(176deg, #D7FC5F -24.05%, #F8F8F8 108.13%);
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px 14px 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: end;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid $black;
+    top: 16px;
+    right: 16px;
+    border-radius: 100%;
+  }
+
+  &::after {
+    display: none;
+    position: absolute;
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: $black;
+    top: 20px;
+    right: 20px;
+    border-radius: 100%;
+  }
+
+  &--selected {
+    &::after {
+      display: block;
+    }
+  }
+
+  &--not-selected {
+    opacity: 0.3;
+  }
+}
+
+.contest-form__sponsor-names {
+  .form-field__item {
+    display: flex;
+    gap: 12px;
+  }
+}
+
+.contest-form__sponsor-logo {
+  .file-field__input-holder {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.contest-form__banner {
+  .file-field__input-holder {
+    width: 484px;
+    height: 150px;
+  }
+}
+
+.contest-form__submit-button {
+  grid-column: 2 / span 1;
+}

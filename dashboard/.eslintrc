@@ -1,0 +1,63 @@
+{
+    "env": {
+      "browser": true,
+      "es2020": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "airbnb",
+      "plugin:prettier/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"]
+        }
+      }
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 11,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "react-hooks"
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-curly-newline": "warn",
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "react/jsx-props-no-spreading": "off",
+      "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+      "react-hooks/exhaustive-deps": "off",
+      "jsx-a11y/anchor-is-valid": "warn",
+      "camelcase": "warn",
+      "no-unused-vars": "warn",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          "required": {
+            "some": [
+              "nesting",
+              "id"
+            ]
+          }
+        }
+      ],
+      "react/prop-types": 0
+    }
+  }

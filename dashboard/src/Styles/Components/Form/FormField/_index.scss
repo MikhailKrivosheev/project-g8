@@ -1,0 +1,95 @@
+.form-field {
+  display: grid;
+  grid-template-columns: 232px auto;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 24px;
+  gap: 20px;
+  width: 100%;
+
+  &--textarea {
+    .form-field__label {
+      align-self: flex-start;
+      padding-top: 14px;
+    }
+  }
+
+  &--checkboxes {
+    .form-field__label {
+      display: flex;
+      justify-content: end;
+      align-self: flex-start;
+  
+      p {
+        max-width: 150px;
+      }
+    }
+  }
+
+  .clear-button {
+    color: $gray;
+    transition: color 0.3s ease;
+    padding: 16px;
+  
+    &:hover {
+      color: $black;
+      background-color: transparent;
+    }
+  }
+
+  &--error {
+    .form-field__label p {
+      color: $red;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: $red;
+    }
+
+    .MuiIconButton-label {
+      color: $red;
+    }
+  }
+
+  .MuiOutlinedInput-root {
+    border-radius: 12px;
+  }
+
+  .MuiFormLabel-asterisk {
+    display: none;
+  }
+
+  .MuiInput-underline {
+    margin-top: 0;
+  }
+
+  .MuiInputLabel-marginDense {
+    transform: unset;
+  }
+
+  label.Mui-focused {
+    display: none;
+    background-color: transparent;
+  }
+}
+
+.form-field__error-block {
+  display: flex;
+  align-items: center;
+  color: $red;
+
+  p {
+    margin-left: 8px;
+  }
+}
+
+.form-field__label {
+  text-align: end;
+  max-width: 210px;
+  justify-self: flex-end;
+}
+
+.form-field__item {
+  overflow: hidden;
+  width: 100%;
+}

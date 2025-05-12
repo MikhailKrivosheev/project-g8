@@ -1,0 +1,61 @@
+.season-form__date-holder {
+  display: flex;
+  gap: 20px;
+
+  label + .MuiInput-formControl {
+    margin-top: 0;
+  }
+}
+
+.season-form__payment {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.season-form__payment-caption {
+  display: flex;
+  gap: 8px;
+  color: $gray;
+
+  svg {
+    min-width: 20px;
+  }
+}
+
+.season-form__files-holder {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.season-form__radio-label {
+  align-self: flex-start;
+  margin-top: 16px;
+}
+
+.season-form__input-holder {
+  position: relative;
+
+  .MuiOutlinedInput-root.Mui-focused {
+    .season-form__input-label {
+      visibility: hidden;
+    }
+
+    fieldset {
+      border-width: 1px;
+      border: 1px solid $black;
+    }
+  }
+}
+
+.season-form__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.season-form__submit-button {
+  grid-column: 2 / span 1;
+}

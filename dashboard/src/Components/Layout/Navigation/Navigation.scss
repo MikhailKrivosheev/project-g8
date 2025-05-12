@@ -1,0 +1,21 @@
+.navigationLink {
+  color: black;
+  text-decoration: none;
+  opacity: .7;
+  padding: 8px 22px;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &-is-active {
+    opacity: 1;
+    background: #dedcdc;
+
+    &:before {
+      display: block;
+    }
+
+  }
+
+}

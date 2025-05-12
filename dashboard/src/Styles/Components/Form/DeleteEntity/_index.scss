@@ -1,0 +1,19 @@
+.delete-entity {
+  color: $gray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &:hover {
+    color: $black;
+  }
+}

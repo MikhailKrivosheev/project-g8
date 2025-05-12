@@ -1,0 +1,33 @@
+.date-item {
+  width: 100%;
+
+  .MuiFormControl-root {
+    border-radius: 12px;
+    border: 1px solid $gray-350;
+    padding: 10px 16px;
+  }
+
+  .MuiInputBase-input {
+    padding: 0;
+  }
+
+  .MuiIconButton-root {
+    transition: color 0.2s ease-in;
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
+      color: $black-900;
+    }
+  }
+
+  .MuiInputLabel-marginDense {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%),
+  }
+}
+
+.date-item__caption {
+  padding-left: 16px;
+}

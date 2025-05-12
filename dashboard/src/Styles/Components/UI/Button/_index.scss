@@ -1,0 +1,54 @@
+.button {
+  padding: 15px 25px;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  cursor: pointer;
+  color: $white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  transition: 0.2s background-color ease-in-out;
+  width: fit-content;
+
+  &:hover {
+    background-color: $black-800;
+  }
+
+  &:disabled {
+    background-color: $gray-250;
+    cursor: not-allowed;
+  }
+
+  &--secondary {
+    background-color: $white;
+    color: $black;
+    border: 1.5px solid $black;
+
+    &:hover {
+      background-color: $black-800;
+      color: $white;
+    }
+  }
+
+  &--third {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    color: $gray;
+    background-color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+
+    svg {
+      transition: 0.2s ease-in-out;
+    }
+  }
+}

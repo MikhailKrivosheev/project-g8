@@ -1,0 +1,196 @@
+@import './Skeleton/';
+
+.season__holder {
+  border-top: 1px solid $gray-250;
+  border-bottom: 1px solid $gray-250;
+}
+
+.season__heading-holder {
+  padding: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    @extend %heading-hovered;
+    background-color: $gray-100;
+  }
+}
+
+.season__heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.season__contests-counter {
+  margin-left: 20px;
+  max-width: 55px;
+}
+
+.season__status {
+  margin-left: 94px;
+  display: flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: $white;
+  border: 1px solid;
+
+  &--active {
+    background-color: $black;
+  }
+
+  &--finished {
+    border-color: $gray-400;
+    background-color: $white;
+    color: $gray-500;
+  }
+
+  &--hidden {
+    background-color: $gray-250;
+    color: $black;
+    border: none;
+  }
+}
+
+.season__side {
+  display: flex;
+  align-items: center;
+
+  &--buttons {
+    grid-gap: 24px;
+  }
+}
+
+.season__contests-holder {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+
+  @include media-breakpoint-up(wide) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.season__contest-create {
+  text-decoration: none;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 32px;
+    height: 2px;
+    background-color: $gray-500;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(90deg);
+    width: 32px;
+    height: 2px;
+    background-color: $gray-500;
+  }
+}
+
+.season__contest-holder, .season__contest-create {
+  height: 232px;
+  padding: 24px;
+  background-color: $gray-100;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 232px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $gray-250;
+  }
+}
+
+.season__contest-heading {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: auto;
+  }
+
+  .season__link {
+    margin-right: 12px;
+  }
+}
+
+.season__contest-status {
+  padding: 6px 12px;
+  background-color: $black;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.season__side-button {
+  background: inherit; 
+
+  &:hover {
+    background: inherit; 
+  }
+}
+
+.season__link {
+  display: block;
+  height: 20px;
+  width: 20px;
+  color: $gray-500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    fill: $black;
+    color: $black;
+  }
+}
+
+.season__arrow-button {
+  color: $gray-500;
+  transition: 0.3s ease;
+  display: flex;
+
+  &--opened {
+    transform: rotate(180deg);
+  }
+
+  &--disabled {
+    opacity: 0.3;
+  }
+
+  %heading-hovered & {
+    color: $black;
+  }
+}
+
+.season__trash-button {
+  all: unset;
+  width: 20px;
+  height: 20px;
+  color: $gray-500;
+  margin-left: 12px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $black;
+  }
+}

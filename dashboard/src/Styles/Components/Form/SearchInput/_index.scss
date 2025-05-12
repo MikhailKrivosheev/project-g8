@@ -1,0 +1,96 @@
+.search-filter {
+  position: relative;
+  max-width: 232px;
+  color: $gray-500;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+  }
+
+  &:hover, &:focus-within, &--filled {
+    .search-filter__input {
+      background-color: $gray-250;
+      color: $black;
+
+      &::placeholder {
+        color: $black;
+      }
+    }
+
+    svg {
+      color: $black;
+    }
+  }
+}
+
+.search-filter__input {
+  width: 100%;
+  padding: 10px 16px 10px 46px;
+  border-radius: 100px;
+  background-color: $gray-100;
+  border: none;
+  transition: 0.2s ease;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
+
+  &::placeholder {
+    color: $gray-500;
+    transition: color 0.2s ease;
+  }
+
+  &:focus {
+    background-color: $gray-250;
+    color: $black;
+    outline: none;
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+}
+
+.search-filter__clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: $gray-500;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: $gray-500;
+    transition: background-color 0.2s ease;
+    border-radius: 24px;
+    top: 50%;
+  }
+
+  &::before {
+    left: 2px;
+    transform: rotate(45deg) translateY(-50%);
+  }
+
+  &::after {
+    right: 2px;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $black;
+  }
+}
