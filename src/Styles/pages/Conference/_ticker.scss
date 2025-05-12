@@ -1,0 +1,48 @@
+.conference-page__ticker-title {
+  @extend %maxWidth;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  margin: 0 0 70px;
+  font-size: 34px;
+
+  svg {
+    margin: 0 20px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    padding: 0 15px;
+  }
+}
+
+.conference-page__ticker-notification {
+  margin-left: 20px;
+  padding: 20px;
+  color: $gray-700;
+  font-size: 16px;
+  border: 1px solid $gray-700;
+  border-radius: 40px;
+  transform: translateY(-100%);
+  transition: 0.3s;
+
+  &--active {
+    transform: translateY(0%);
+  }
+
+  @include media-breakpoint-down(tablet) {
+    position: absolute;
+    bottom: calc(-100% - 10px);
+    margin-left: 0;
+    padding: 5px;
+    transform: translateY(0%);
+    transform: translateX(-120%);
+
+    &--active {
+      transform: translateX(0%);
+    }
+  }
+}

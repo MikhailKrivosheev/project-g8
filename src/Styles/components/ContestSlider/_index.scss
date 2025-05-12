@@ -1,0 +1,20 @@
+$contestSlide-width: 436px;
+$contestSlider-marginTop: 40px;
+$contestSlider-marginTop-phone: 20px;
+
+.card__contest {
+  width: $contestSlide-width;
+  height: 100%;
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+  }
+}
+
+.contest__slider {
+  margin: $contestSlider-marginTop 0;
+
+  @include media-breakpoint-down(phone) {
+    margin: $contestSlider-marginTop-phone 0;
+  }
+}

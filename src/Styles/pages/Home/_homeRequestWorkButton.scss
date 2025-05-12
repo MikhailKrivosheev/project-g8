@@ -1,0 +1,9 @@
+.home__request-work-button {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  z-index: 100;
+  justify-content: center;
+  width: calc(100% - 32px);
+  transform: translateX(-50%);
+}

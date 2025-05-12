@@ -1,0 +1,89 @@
+.nomination {
+  padding: 50px 0;
+  border-bottom: 1px solid $black;
+}
+
+.nomination__title {
+  @extend %nominationTitle;
+  position: relative;
+  margin-bottom: 50px;
+  padding-right: 50px;
+}
+
+.nomination__works {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  height: 145px;
+  margin: 70px 0 80px;
+
+  @include media-breakpoint-down(phone) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    height: 75px;
+    margin: 50px 0 60px;
+  }
+}
+
+.nomination__work {
+  position: relative;
+}
+
+.nomination__link {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+}
+
+.nomination__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.nomination-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+
+  @include media-breakpoint-down(phone) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.nomination-info__container {
+  grid-column: 1 / span 2;
+}
+
+.nomination-info__title {
+  margin-bottom: 20px;
+
+  @include media-breakpoint-down(phone) {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+}
+
+.nomination-info__description {
+  %darkTheme & * {
+    color: $white !important;
+  }
+}
+
+.nominations-info__button {
+  @extend %nominations-info__button;
+  justify-self: end;
+
+  @include media-breakpoint-down(phone) {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 30px;
+  }
+}

@@ -1,0 +1,25 @@
+* {
+  @include styled-scrollbar;
+  box-sizing: border-box;
+}
+
+*:disabled {
+  cursor: not-allowed;
+}
+
+.body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--secondary-color);
+  font-family: $fontFamily;
+  background-color: var(--primary-color);
+  transition: $transitionMedium;
+
+  &--stuck {
+    overflow: hidden;
+  }
+
+  &--dark {
+    @extend %darkTheme;
+  }
+}

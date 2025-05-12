@@ -1,0 +1,53 @@
+.popup {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 100;
+  width: 440px;
+  padding: 40px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border-radius: 80px;
+}
+
+.popup__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.popup__close {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+
+  &::before,
+  &::after {
+    @include pseudo;
+    width: 1px;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: $UITransitionDefault;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &::after,
+    &::before {
+      background-color: $hover-color;
+    }
+  }
+}

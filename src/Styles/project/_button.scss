@@ -1,0 +1,86 @@
+%buttonTemplate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $button-height-size-m;
+  padding: 0 30px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 0;
+  border-radius: $button-height-size-m / 2;
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+%buttonStretched {
+  display: flex;
+  align-items: center;
+  height: $button-height-size-xs;
+  padding: 12px 15px;
+  color: $black;
+  text-decoration: none;
+  background-color: $gray;
+  border: 0;
+  border-radius: $button-height-size-xs / 2;
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:active {
+    color: var(--secondary-color);
+    background-color: $green-100;
+  }
+}
+
+%buttonCircle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: $button-height-size-xs;
+  height: $button-height-size-xs;
+  padding: 0;
+  color: $black;
+  text-decoration: none;
+  background-color: $gray;
+  border: 0;
+  border-radius: $button-height-size-xs / 2;
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:active {
+    color: $white;
+    background-color: $black;
+  }
+
+  @include media-breakpoint-down(phone) {
+    & + & {
+      margin-left: 2;
+    }
+  }
+}
+
+%buttonCircle--black {
+  @extend %buttonCircle;
+  color: $white;
+  background-color: $black;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
+
+  &:active {
+    color: $black;
+    background-color: $green-100;
+  }
+}

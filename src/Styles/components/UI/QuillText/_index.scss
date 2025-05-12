@@ -1,0 +1,63 @@
+.quill-text {
+  margin: 20px 0;
+
+  @include media-breakpoint-down(phone) {
+    margin-bottom: 24px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  ul {
+    padding: 10px 40px 0;
+    padding-left: 40px; 
+
+    li {
+      list-style-type: disc;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .ql-size-huge {
+    font-size: 86px;
+    line-height: 1;
+
+    @include media-breakpoint-down(tablet) {
+      font-size: 64px;
+    }
+
+    @include media-breakpoint-down(phone) {
+      font-size: 48px;
+    }
+  }
+
+  span.ql-size-huge {
+    font-weight: 500;
+  }
+
+  .ql-size-large {
+    font-size: 34px;
+
+    @include media-breakpoint-down(phone) {
+      font-size: 24px;
+    }
+  }
+
+  .ql-size-normal {
+    font-size: 16px;
+  }
+
+  .ql-size-small {
+    font-size: 10px;
+  }
+
+  &--big {
+    .ql-size-normal {
+      font-size: 20px;
+    }
+  }
+}

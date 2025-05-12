@@ -1,0 +1,39 @@
+.link {
+  @extend %buttonTemplate;
+  @extend %link;
+  color: var(--secondary-color);
+  font-weight: 500;
+  background: transparent;
+  border: var(--secondary-color) solid 1px;
+
+  &:hover {
+    color: $green;
+    border: $green solid 1px;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &--left {
+    svg {
+      order: -1;
+      transform: rotate(180deg);
+    }
+  }
+
+  // TODO move simple logic to jsx prop
+
+  &--simple {
+    all: unset;
+    cursor: pointer;
+
+    svg {
+      display: none;
+    }
+
+    &:hover {
+      border: unset;
+    }
+  }
+}

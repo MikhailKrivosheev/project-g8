@@ -1,0 +1,89 @@
+.cookies {
+  position: fixed;
+  top: 108px;
+  right: 40px;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px 20px 20px 30px;
+  background-color: $gray-500;
+  border-radius: 80px;
+
+  @include media-breakpoint-down(phone) {
+    top: unset;
+    right: unset;
+    bottom: 92px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+  }
+}
+
+.cookies__holder {
+  display: flex;
+  align-items: center;
+}
+
+.cookies__description {
+  margin-right: 20px;
+
+  a {
+    position: relative;
+    color: $green;
+    transition: color 0.3s;
+
+    &::before {
+      @include pseudo;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $green;
+      transition: background-color 0.3s;
+    }
+
+    &:hover {
+      color: $black;
+
+      &::before {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.cookies__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 12px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: $white-500;
+  border: 0;
+  border-radius: 200px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+// This for Policy page
+
+.cookie-policy__title {
+  @include media-breakpoint-down(phone) {
+    font-size: 32px;
+    line-height: 37px;
+  }
+}
+
+.cookie-policy__description {
+  margin-bottom: 0;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a {
+    word-break: break-all;
+  }
+}

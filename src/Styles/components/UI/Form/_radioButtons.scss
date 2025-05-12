@@ -1,0 +1,37 @@
+.form__radio {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  @include media-breakpoint-up(desktop) {
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
+.radio-button__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  &:checked {
+    @extend %radioButtonInput-checked;
+  }
+}
+
+.radio-button__checkmark {
+  @extend %buttonStretched;
+
+  %radioButtonInput-checked ~ & {
+    background-color: $green-100;
+  }
+}

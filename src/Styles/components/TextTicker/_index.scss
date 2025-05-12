@@ -1,0 +1,20 @@
+.text-ticker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 48px;
+  font-weight: 500;
+  font-size: 20px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  border-top: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+
+  a {
+    margin: 0 4px;
+  }
+
+  svg {
+    margin: 2px 4px;
+  }
+}

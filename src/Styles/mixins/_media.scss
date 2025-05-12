@@ -1,0 +1,11 @@
+@mixin media-breakpoint-up($device: desktop) {
+  @media #{map-get($mediaQueriesUp, $device)} {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($device: desktop) {
+  @media #{map-get($mediaQueriesDown, $device)} {
+    @content;
+  }
+}

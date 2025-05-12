@@ -1,0 +1,15 @@
+$grid-gap: 24px;
+
+@mixin grid-holder($col-nubmer) {
+  display: grid;
+  grid-column-gap: $grid-gap;
+  grid-template-columns: repeat($col-nubmer, 1fr);
+
+  @include media-breakpoint-down(phone) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@mixin grid-element($col-start, $col-width) {
+  grid-column: $col-start / span $col-width;
+}

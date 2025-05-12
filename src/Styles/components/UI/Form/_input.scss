@@ -1,0 +1,71 @@
+.input {
+  @extend %field;
+  width: 100%;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    color: var(--secondary-color);
+  }
+
+  %form__row & {
+    height: 44px;
+    padding: 0;
+    color: var(--secondary-color);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $gray-100;
+    border-radius: 0;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: var(--secondary-color);
+      border-color: var(--secondary-color);
+    }
+  }
+
+  %auth-popup & {
+    &:active,
+    &:focus {
+      color: $green-700;
+      background-color: $white;
+      border-color: var(--primary-color);
+      outline: none;
+    }
+  }
+
+  %inputError & {
+    border-bottom: 1px solid $red;
+  }
+
+  &--with-toggle {
+    position: relative;
+    padding-right: 60px;
+  }
+}
+
+.input__label {
+  position: relative;
+  display: block;
+  color: var(--secondary-color);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.input__show-button {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--hidden {
+    opacity: 0.2;
+  }
+}

@@ -1,0 +1,36 @@
+$slider-size: 20px;
+
+.rc-slider {
+  display: flex;
+  align-items: center;
+  height: $slider-size !important;
+  cursor: pointer;
+}
+
+.rc-slider-rail {
+  height: 8px !important;
+  background-color: $white !important;
+}
+
+.rc-slider-track {
+  height: 8px !important;
+  background-color: $green !important;
+}
+
+.rc-slider-handle {
+  width: $slider-size !important;
+  height: $slider-size !important;
+  margin-top: 0 !important;
+  background-color: $green !important;
+  border: none !important;
+  opacity: 1 !important;
+
+  &:focus-visible,
+  &:active {
+    box-shadow: none !important;
+  }
+}
+
+.rc-slider-handle-dragging {
+  box-shadow: none !important;
+}

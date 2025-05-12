@@ -1,0 +1,70 @@
+/* stylelint-disable color-function-notation */
+$sponsor-icon-height: 80px;
+$sponsor-icon-small-height: 30px;
+$sponsor-height: 144px;
+$sponsor-small-height: 80px;
+
+.sponsor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  max-width: 280px;
+  height: $sponsor-small-height;
+  margin-top: 1px;
+  margin-right: 1px;
+  overflow: hidden;
+  border-radius: 80px;
+
+  &--short {
+    padding: 20px;
+  }
+
+  &--high {
+    @extend %sponsorHigh;
+    min-width: 380px;
+    max-width: unset;
+    height: $sponsor-height;
+  }
+
+  @include media-breakpoint-down(phone) {
+    &--high {
+      height: $sponsor-small-height;
+    }
+  }
+
+  &--full-width {
+    @extend %sponsorFullWidth;
+    width: 100%;
+  }
+}
+
+$sponsorImageSize: 112px;
+$sponsorImageMobSize: 80px;
+
+.sponsor__image {
+  width: $sponsorImageMobSize;
+  height: $sponsorImageMobSize;
+  object-fit: contain;
+
+  %sponsorHigh & {
+    width: $sponsorImageSize;
+    height: $sponsorImageSize;
+
+    @include media-breakpoint-down(phone) {
+      width: $sponsorImageMobSize;
+      height: $sponsorImageMobSize;
+    }
+  }
+
+  %sponsorFullWidth & {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    height: 130%;
+  }
+
+  @include media-breakpoint-down(phone) {
+    border-radius: 50%;
+  }
+}

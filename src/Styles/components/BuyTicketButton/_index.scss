@@ -1,0 +1,5 @@
+.buy-ticket-button {
+  %button + & {
+    margin-top: 10px;
+  }
+}

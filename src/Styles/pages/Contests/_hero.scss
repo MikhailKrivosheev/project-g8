@@ -1,0 +1,104 @@
+$curator-image-size: 80px;
+$curator-image-size-phone: 60px;
+$curator-info-marginLeft: 40px;
+
+.contests__contest-type {
+  width: fit-content;
+  margin-bottom: 30px;
+  padding: 13px 50px;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid $black;
+  border-radius: 92px;
+
+  @include media-breakpoint-down(tablet) {
+    padding: 8px 25px;
+    font-size: 12px;
+  }
+}
+
+.contests__title {
+  margin-bottom: 40px;
+
+  @include media-breakpoint-down(phone) {
+    margin-bottom: 20px;
+  }
+}
+
+.contests-hero {
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-top: 20px;
+  }
+}
+
+.contests-hero__image {
+  max-height: 320px;
+  margin: 40px 0 30px;
+  object-fit: cover;
+  border-radius: 80px;
+
+  @include media-breakpoint-down(phone) {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+.contests-hero__description {
+  span {
+    font-size: 20px;
+  }
+}
+
+.curator {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 50px 0 40px;
+
+  @include media-breakpoint-down(phone) {
+    margin: 32px 0 0;
+  }
+}
+
+.curator__image {
+  width: $curator-image-size;
+  height: $curator-image-size;
+  object-fit: cover;
+  border-radius: 50%;
+
+  @include media-breakpoint-down(phone) {
+    width: $curator-image-size-phone;
+    height: $curator-image-size-phone;
+  }
+}
+
+.curator__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: $curator-info-marginLeft;
+
+  > p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 40px;
+
+    @include media-breakpoint-down(phone) {
+      line-height: 33px;
+    }
+  }
+
+  > p:last-child {
+    font-size: 34px;
+
+    @include media-breakpoint-down(phone) {
+      font-size: 24px;
+    }
+  }
+}

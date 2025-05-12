@@ -1,0 +1,97 @@
+.contests-radio {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  padding: 10px;
+  background: $white;
+  border: 1px solid $black;
+  border-radius: 40px;
+
+  .contests-radio__button {
+    margin-bottom: 0;
+  }
+}
+
+.contests-radio__contest-type {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  height: calc(80% + 50px);
+  border-radius: 40px;
+}
+
+.contests-radio__button {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  @include media-breakpoint-up(desktop) {
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
+.contests-radio__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  &:checked {
+    @extend %radioButtonInput-checked;
+  }
+}
+
+.contests-radio__checkmark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  border: 1px solid $gray;
+  border-radius: 200px;
+
+  %radioButtonInput-checked ~ & {
+    // padding-right: 8px;
+    border-color: var(--secondary-color);
+  }
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-color;
+
+    // transition: $UITransitionDefault;
+
+    %radioButtonInput-checked ~ & {
+      border-color: $hover-color;
+    }
+  }
+}
+
+.contests-readio__count {
+  margin: 0 10px 0 20px;
+}
+
+.contest-radio__delete-button {
+  all: unset;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+  &:hover {
+    circle {
+      transition: $UITransitionDefault;
+      fill: $black;
+    }
+
+    path {
+      transition: $UITransitionDefault;
+      stroke: $white;
+    }
+  }
+}

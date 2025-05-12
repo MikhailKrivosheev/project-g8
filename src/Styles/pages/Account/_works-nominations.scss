@@ -1,0 +1,46 @@
+.works-nomination {
+  @extend %worksNomination;
+  position: relative;
+  padding: 0 $section-padding 0 $accountBackgroundSection-width;
+  overflow: visible;
+
+  @include media-breakpoint-down(phone) {
+    padding: 0 $section-padding-phone 0 $section-padding-phone;
+  }
+}
+
+.works-nomination__wrapper-title {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-down(phone) {
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.works-nomination__description {
+  margin-bottom: 50px;
+
+  @include media-breakpoint-down(phone) {
+    margin-bottom: 30px;
+  }
+}
+
+$worksNominationButton-size: 48px;
+
+.works-nomination__button {
+  @extend %buttonCircle;
+}
+
+.works-nomination__icon {
+  margin: 0;
+  transform: rotate(180deg);
+  fill: $black;
+}
+
+.works-nomination__table {
+  @extend %worksNomination-table;
+}

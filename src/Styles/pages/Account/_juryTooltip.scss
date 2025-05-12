@@ -1,0 +1,33 @@
+.jury-tooltip {
+  display: grid;
+  gap: 10px;
+}
+
+.jury-tooltip__item {
+  display: flex;
+  align-items: center;
+}
+
+.jury-tooltip__image {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.jury-tooltip__name {
+  margin: 0 10px 0 20px;
+}
+
+.jury-tooltip__approved {
+  margin-left: auto;
+}
+
+.reset-vote-button {
+  all: unset;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: transparent;
+  }
+}

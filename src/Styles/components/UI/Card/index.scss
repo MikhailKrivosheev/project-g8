@@ -1,0 +1,227 @@
+$card-margin: 30px;
+$card-borderRadius: 8px;
+$cardInfo-text-margin: 10px;
+$cardInfo-svg-margin: 10px;
+$card-logo-size: 48px;
+$card-gap: 32px;
+$link-z-index: 1;
+
+.card {
+  @extend %cardSmall;
+  position: relative;
+  width: calc(50% - $card-margin / 2);
+  margin: 0 0 $card-margin;
+  padding-bottom: 40px;
+  background-color: $gray-500;
+  border-radius: $card-borderRadius;
+
+  %slider & {
+    margin: 0;
+  }
+
+  button {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: $link-z-index + 1;
+  }
+
+  &--wide {
+    @extend %cardWide;
+    grid-column: span 4;
+    padding-bottom: 0;
+
+    @include media-breakpoint-down(tablet) {
+      grid-column: span 2;
+    }
+  }
+
+  @include media-breakpoint-up(desktop) {
+    width: calc(33% - $card-margin / 2);
+
+    &--wide {
+      display: flex;
+    }
+  }
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+  }
+}
+
+$cardImage-height: calc(100% / (3 / 2));
+
+.card__image-holder {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    @include pseudo(relative);
+    padding-bottom: $cardImage-height;
+  }
+
+  @include media-breakpoint-up(desktop) {
+    %cardWide & {
+      width: calc(50% - #{$card-gap} / 2);
+    }
+  }
+}
+
+.card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $card-borderRadius;
+}
+
+.card__info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  color: $black;
+
+  %cardWide & {
+    padding: 45px 20px 100px;
+  }
+
+  p,
+  h3 {
+    margin: $cardInfo-text-margin 0 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 18px;
+
+    %cardWide & {
+      font-size: 34px;
+
+      @include media-breakpoint-down(phone) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(desktop) {
+    padding: 40px 20px 80px;
+    %cardWide & {
+      width: calc(50% + #{$card-gap} / 2);
+      padding: 50px 50px $card-gap;
+
+      p {
+        margin-top: 50px;
+        font-size: 16px;
+      }
+
+      h3 {
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+.card__logo {
+  position: absolute;
+  top: calc($card-logo-size / -2);
+  left: $card-gap;
+  width: $card-logo-size;
+  height: $card-logo-size;
+  object-fit: cover;
+  border-radius: 50%;
+
+  %cardWide & {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-down(phone) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include media-breakpoint-up(desktop) {
+    %cardWide & {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.card__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $link-z-index;
+  width: 100%;
+  height: 100%;
+}
+
+.card__likes {
+  display: flex;
+  align-content: center;
+  align-self: flex-end;
+  margin-top: auto;
+  cursor: pointer;
+  all: unset;
+
+  &--active {
+    @extend %cardLikes-active;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.card__likes-svg {
+  margin-right: $cardInfo-svg-margin;
+  fill: transparent;
+  stroke: var(--secondary-color);
+
+  %cardLikes-active & {
+    fill: var(--secondary-color);
+  }
+
+  &--empty {
+    margin-right: 0;
+  }
+}
+
+.card__category {
+  color: $gray-100;
+}
+
+%cardSmall h3 {
+  font-size: 14px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 12px;
+  }
+}
+
+.card__company {
+  font-weight: 500;
+
+  %cardSmall & {
+    font-size: 12px;
+
+    @include media-breakpoint-down(phone) {
+      font-size: 10px;
+    }
+  }
+
+  %cardWide & {
+    font-size: 16px;
+
+    @include media-breakpoint-down(phone) {
+      font-size: 14px;
+    }
+  }
+}

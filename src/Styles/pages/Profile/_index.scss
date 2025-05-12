@@ -1,0 +1,108 @@
+$userImage-size: 144px;
+$userImage-phone-size: 104px;
+
+.user__personal {
+  position: relative;
+  display: flex;
+
+  &::after {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    height: 1px;
+    background-color: $gray-100;
+    content: '';
+  }
+}
+
+.user__personal-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  padding-top: 30px;
+
+  @include media-breakpoint-down(phone) {
+    margin-left: 15px;
+    padding-top: 10px;
+  }
+}
+
+.user__image {
+  width: $userImage-size;
+  height: $userImage-size;
+  object-fit: cover;
+  border-radius: $image-borderRadius;
+
+  @include media-breakpoint-down(phone) {
+    width: $userImage-phone-size;
+    min-width: $userImage-phone-size;
+    height: $userImage-phone-size;
+  }
+}
+
+.user__socials {
+  display: flex;
+  margin: 15px 0;
+
+  @include media-breakpoint-down(phone) {
+    margin: 10px 0;
+  }
+}
+
+.user__social {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  & + & {
+    margin-left: 15px;
+  }
+
+  @include media-breakpoint-down(phone) {
+    font-size: 14px;
+  }
+}
+
+.user__link {
+  color: $blue;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.user__info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+$userInfoCategory-width: 112px;
+
+.user-info__item {
+  display: flex;
+  margin-top: 30px;
+
+  p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &-headline {
+    width: $userInfoCategory-width;
+    min-width: $userInfoCategory-width;
+    margin-right: 35px;
+    color: $gray-100;
+    font-weight: 500;
+  }
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-headline {
+      width: fit-content;
+      min-width: 0;
+      margin: 0 0 15px;
+    }
+  }
+}

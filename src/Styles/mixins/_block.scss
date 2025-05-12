@@ -1,0 +1,19 @@
+// stylelint-disable
+
+@mixin pseudo($position: absolute, $display: block, $content: '',$extend: true) {
+  @if $position == 'absolute' and $display == 'block' and $content == '' and $extend == true {
+    position: absolute;
+    content: '';
+    display: block;
+  } @else {
+    @if $display == 'inline-block' {
+      display: inline-block;
+    } @else {
+      display: $display;
+    }
+    content: '' + $content;
+    position: $position;
+  }
+}
+
+// stylelint-enable

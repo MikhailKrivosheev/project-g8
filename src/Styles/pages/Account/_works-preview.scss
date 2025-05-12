@@ -1,0 +1,122 @@
+.works-preview__item {
+  @include grid-holder(6);
+  display: grid;
+  gap: 15px;
+  padding: 0 0 20px;
+  border-bottom: 1px solid $gray-600;
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  &--rated {
+    @extend %worksPreveiw-rated;
+  }
+}
+
+.works-preview__item-top {
+  @extend %worksPreview-top;
+  @include grid-element(1, 6);
+  display: flex;
+
+  %worksNomination & {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.works-preview__item-middle {
+  @extend %worksPreview-middle;
+  @include grid-element(1, 4);
+
+  %worksPreveiw-rated & {
+    @include grid-element(1, 6);
+    display: flex;
+    align-items: center;
+  }
+}
+
+.works-preview__item-bottom {
+  @extend %worksPreview-bottom;
+  @include grid-element(5, 3);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include media-breakpoint-down(phone) {
+    @include grid-element(1, 6);
+    flex-direction: row;
+  }
+}
+
+.works-preview__label {
+  color: $gray-600;
+  font-size: 12px;
+}
+
+.works-preview__text {
+  color: $black;
+  font-weight: 500;
+  font-size: 12px;
+
+  %worksPreview-top & {
+    margin-left: 20px;
+  }
+
+  %worksPreview-middle &,
+  %worksPreview-bottom & {
+    margin: auto 0;
+  }
+
+  %worksPreview-bottom & {
+    margin-left: 20px;
+  }
+
+  %worksNomination %worksPreview-middle &,
+  %worksNomination %worksPreview-bottom & {
+    margin-top: 15px;
+  }
+
+  %worksPreveiw-rated %worksPreview-middle & {
+    width: 50%;
+    margin: 0 0 0 auto;
+  }
+
+  %worksPreveiw-rated %worksPreview-bottom & {
+    width: 50%;
+    margin: 0 0 0 auto;
+  }
+
+  %worksPreview-image + & {
+    font-size: 14px;
+  }
+}
+
+.works-preview__button {
+  display: block;
+  max-width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.works-preview__image {
+  @extend %worksPreview-image;
+  display: block;
+  width: 110px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+
+  @include media-breakpoint-down(phone) {
+    width: 100px;
+    height: 70px;
+    min-width: 100px;
+  }
+}
+
+.works-preview__link {
+  %worksPreveiw-rated & {
+    @include grid-element(1, 6);
+  }
+}

@@ -1,0 +1,20 @@
+.table {
+  border-collapse: collapse;
+}
+
+.table__row {
+  position: relative;
+  margin-bottom: 1px;
+  border-bottom: 1px solid black;
+
+  &:last-child {
+    border: none;
+  }
+
+  @include media-breakpoint-down(phone) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+  }
+}

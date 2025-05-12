@@ -1,0 +1,45 @@
+$fontVariants: (
+  100: thin,
+  100-italic: thinitalic,
+  300: light,
+  300-italic: lightitalic,
+  400: regular,
+  400-italic: italic,
+  500: medium,
+  500-italic: mediumitalic,
+  700: bold,
+  700-italic: bolditalic,
+  800: 'extra',
+  800-italic: extraitalic,
+  900: 'black',
+  900-italic: blackitalic,
+);
+
+$fontVariantsMTS: (
+  500: medium,
+);
+
+$fontFormats: (
+  woff: woff,
+);
+
+$fontFamily: 'TT Interphases', 'Verdana', 'Geneva', sans-serif;
+$fontFamilyMTS: 'MTSWide', 'Verdana', 'Geneva', sans-serif;
+
+@include font-face(
+  'TT Interphases',
+  ttinterphases,
+  $fontVariants,
+  $fontFormats,
+  true,
+  true
+);
+
+@include font-face(
+  'MTSWide',
+  mtswide,
+  $fontVariantsMTS,
+  $fontFormats,
+  true,
+  true
+);

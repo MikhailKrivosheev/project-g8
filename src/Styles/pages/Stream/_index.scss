@@ -1,0 +1,28 @@
+.stream__plug {
+  position: relative;
+  width: 100%;
+  padding: 70px 200px;
+  background-color: $red-800;
+}
+
+.stream__image--left {
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+}
+
+.stream__image--right {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+}
+
+.stream__plug-description {
+  color: $black;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px $gray-600;
+}

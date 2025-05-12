@@ -1,0 +1,25 @@
+.form__checkbox-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 15px 20px;
+  background-color: var(--primary-color);
+  border: 1px solid $gray;
+  border-radius: 200px;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-color;
+
+    %radioButtonInput-checked ~ & {
+      border-color: $hover-color;
+    }
+  }
+
+  input:checked + & {
+    border-color: var(--secondary-color);
+  }
+}

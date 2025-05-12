@@ -1,0 +1,59 @@
+.winners {
+  @extend %winnersSection;
+  margin-bottom: 40px;
+
+  @include media-breakpoint-down(phone) {
+    margin-bottom: 20px;
+  }
+}
+
+.winners__slider {
+  @extend %winnersSectionSlider;
+  display: none;
+  margin: $content-margin-mobile 0;
+
+  @include media-breakpoint-down(phone) {
+    display: block;
+    padding-left: $section-padding-phone !important;
+    margin: 20px 0 0;
+  }
+}
+
+.winners__link {
+  margin: 40px $section-padding-phone 0;
+}
+
+.winners__title {
+  font-size: 60px;
+  line-height: 96px;
+  padding: 0;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 32px;
+    line-height: 38px;
+    padding: 0 $section-padding-phone;
+  }
+}
+
+.winners__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+
+  @include media-breakpoint-down(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+.winners__card {
+  position: relative;
+  width: unset;
+  margin-bottom: 0;
+}
+
+.winners__placeholder {
+  @include media-breakpoint-down(phone) {
+    margin: 40px auto 0;
+  }
+}

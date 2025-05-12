@@ -1,0 +1,40 @@
+$light-green: linear-gradient(179.83deg, #d8fc63 0.15%, #fcfaf8 39.2%);
+$medium-green: linear-gradient(180deg, #d8fc63 0.18%, #fcfaf8 71.2%);
+$dark-green: linear-gradient(180deg, #d7fc5e 0%, #fcfaf8 100%);
+
+.contest__type {
+  z-index: -1;
+  padding: 15px 80px 0;
+  font-weight: 500;
+  line-height: 28px;
+  border-radius: 20px;
+
+  &--gray {
+    background: $gray-500;
+  }
+
+  &--dark-blue {
+    background: linear-gradient(180deg, #979dab 0.15%, #fcfaf8 39.2%);
+  }
+
+  &--light-green {
+    background: $light-green;
+  }
+
+  &--medium-green {
+    background: $medium-green;
+  }
+
+  &--dark-green {
+    background: $dark-green;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    padding: 10px 30px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,159 @@
+%centerPosition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+.file {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  color: transparent;
+  background-color: transparent;
+  border: none;
+  border: 1px solid $gray-100;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &::-webkit-file-upload-button,
+  &::file-selector-button {
+    display: none;
+  }
+
+  &::after {
+    @extend %centerPosition;
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    content: url('../../public/Images/image-upload.svg');
+  }
+
+  &:hover {
+    border: 1px solid var(--secondary-color);
+
+    &::after {
+      color: var(--secondary-color);
+      content: '+';
+    }
+  }
+
+  &--filled {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+.file__wrapper {
+  @extend %fileWrapper;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    margin-top: 10px;
+  }
+
+  .form__error-text {
+    position: absolute;
+    bottom: -20px;
+  }
+
+  &--error {
+    @extend %fileWrapperError;
+  }
+}
+
+.file__preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.file__remove {
+  @extend %fileRemove;
+  position: relative;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  font-size: 0;
+  background: transparent;
+  border: none;
+  border: 1px solid $gray-100;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    @extend %fileRemove-hover;
+
+    img {
+      opacity: 0.5;
+    }
+  }
+
+  %fileWrapperError & {
+    border-color: $red;
+  }
+}
+
+.file__cross {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: $UITransitionDefault;
+
+  &::after,
+  &::before {
+    @include pseudo;
+    width: 2px;
+    height: 10px;
+    background-color: $black;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  %fileRemove-hover & {
+    opacity: 1;
+  }
+
+  %workCreateFileWrapper & {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  %workCreateFileWrapper %fileRemove-hover & {
+    color: $white;
+    background-color: $black;
+
+    &::after,
+    &::before {
+      background-color: $white;
+    }
+  }
+}

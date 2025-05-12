@@ -1,0 +1,107 @@
+$accountBackgroundImage-width: 300px;
+$accountBackgroundSection-width: $accountBackgroundImage-width + 60px;
+
+.account__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0;
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+  }
+}
+
+.account__sign-out-button {
+  width: auto;
+  margin: 0 60px 20px auto;
+  padding: 10px 30px;
+
+  @include media-breakpoint-down(phone) {
+    margin-right: 20px;
+  }
+}
+
+.account__info-group {
+  width: calc(50% - 20px);
+
+  h2 {
+    margin: 50px 0 30px;
+  }
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+  }
+}
+
+.account__form {
+  width: calc(100% - $accountBackgroundSection-width);
+  margin-left: $accountBackgroundSection-width;
+  padding-right: 60px;
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 $section-padding-phone;
+  }
+}
+
+.account__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $accountBackgroundImage-width;
+  height: 100vh;
+  object-fit: cover;
+
+  %darkTheme & {
+    filter: brightness(0.5);
+  }
+
+  @include media-breakpoint-down(phone) {
+    display: none;
+  }
+}
+
+.account__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - $accountBackgroundSection-width - 1.5 * $section-padding);
+  margin-left: $accountBackgroundSection-width;
+
+  @include media-breakpoint-down(phone) {
+    width: calc(100% - 2 * $section-padding-phone);
+    margin-left: $section-padding-phone;
+  }
+}
+
+$accountTab-height: 80px;
+$accountTab-height-phone: 60px;
+
+.account__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(50% - 16px);
+  height: $accountTab-height;
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 44px;
+  background: $gray-500;
+  border: none;
+  border-radius: 80px;
+  outline: none;
+  cursor: pointer;
+
+  &--active {
+    background: $green-100;
+  }
+
+  @include media-breakpoint-down(phone) {
+    width: calc(50% - 8px);
+    height: $accountTab-height-phone;
+    font-size: 16px;
+  }
+}

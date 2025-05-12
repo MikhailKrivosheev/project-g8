@@ -1,0 +1,154 @@
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--primary-color);
+
+  %field + & {
+    margin-top: 10px;
+  }
+
+  svg {
+    position: absolute;
+    right: 40px;
+    transition: $UITransitionDefault;
+    pointer-events: none;
+
+    path {
+      stroke: var(--primary-color);
+    }
+  }
+
+  &--open {
+    @extend %select--open;
+
+    color: var(--secondary-color);
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &--gray {
+    @extend %selectGray;
+    width: fit-content;
+
+    svg {
+      position: absolute;
+      right: 25px;
+
+      path {
+        stroke: $black;
+      }
+    }
+  }
+
+  &--disabled {
+    @extend %select-disabled;
+    opacity: 0.6;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    width: 100%;
+  }
+}
+
+.select-toggle {
+  @extend %field;
+  width: 100%;
+  padding-right: 40px;
+  overflow: hidden;
+  color: var(--primary-color);
+  white-space: nowrap;
+  text-align: left;
+  cursor: pointer;
+  transition: $UITransitionDefault;
+
+  %select--open & {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border-color: var(--secondary-color);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  %selectGray & {
+    @extend %buttonStretched;
+
+    padding-right: 45px;
+    text-align: center;
+  }
+
+  %select--open%selectGray & {
+    background-color: $gray;
+  }
+
+  %auth-popup & {
+    &:active,
+    &:focus {
+      color: $green-700;
+    }
+  }
+
+  %select-disabled & {
+    cursor: not-allowed;
+  }
+}
+
+.select__dropdown {
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  width: 100%;
+  max-height: 200px;
+  margin: 0;
+  overflow: auto;
+  text-align: left;
+  list-style: none;
+  background: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+
+  &::-webkit-scrollbar {
+    padding-right: 10px;
+  }
+
+  %auth-popup & {
+    max-height: 150px;
+  }
+
+  %select--open & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  %select--open%selectGray & {
+    background: $gray;
+    border: 0;
+    border-top: 1px solid $black;
+  }
+}
+
+.select__item {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 30px 40px;
+  color: $black;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  %selectGray & {
+    padding: 12px 20px;
+  }
+}

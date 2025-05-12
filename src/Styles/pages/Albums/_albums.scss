@@ -1,0 +1,20 @@
+$gap: 40px;
+
+.album-grid {
+  @extend %albumGrid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    grid-template-columns: 1fr;
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}

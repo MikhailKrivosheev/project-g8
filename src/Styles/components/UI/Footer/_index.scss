@@ -1,0 +1,145 @@
+.footer {
+  @include grid-holder(8);
+  z-index: 10;
+  width: 100vw;
+  max-width: 100vw;
+  margin-top: auto;
+  padding: 90px calc((100vw - 1200px) / 2) 130px;
+
+  &--account-page {
+    width: calc(100% - 360px);
+    margin-left: 360px;
+    padding: 90px 60px 90px 0;
+
+    @include media-breakpoint-down(phone) {
+      width: 100vw;
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-down(phone) {
+    padding: 80px 16px;
+  }
+}
+
+.footer__left-side {
+  @include grid-element(1, 2);
+
+  @include media-breakpoint-down(phone) {
+    @include grid-element(1, 3);
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.footer__center-side {
+  @include grid-element(4, 2);
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+
+  @include media-breakpoint-down(tablet) {
+    @include grid-element(5, 4);
+  }
+
+  @include media-breakpoint-down(phone) {
+    @include grid-element(4, 3);
+  }
+
+  .footer-select__control {
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  .footer-select__menu {
+    margin-top: 2px;
+    border-radius: 20px;
+  }
+
+  .footer-select__option {
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .footer-select__placeholder {
+    @include media-breakpoint-down(phone) {
+      font-size: 14px;
+    }
+  }
+}
+
+.footer__archive {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 25px;
+
+  @include media-breakpoint-down(phone) {
+    margin-bottom: 20px;
+  }
+}
+
+.footer__right-side {
+  @include grid-element(7, 2);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.footer__year {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 34px;
+
+  @include media-breakpoint-down(phone) {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.footer__links-item {
+  @include media-breakpoint-down(phone) {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.footer__link {
+  color: var(--color-secodary);
+  font-weight: 500;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+}
+
+.footer__social {
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  a {
+    color: var(--color-secodary);
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+  }
+}
+
+.footer__payment-button {
+  padding: 12px;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.footer__payment-icon {
+  width: 48px;
+  height: 24px;
+}

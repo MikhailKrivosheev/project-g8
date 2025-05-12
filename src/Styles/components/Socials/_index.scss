@@ -1,0 +1,17 @@
+.share {
+  display: flex;
+}
+
+.share__link-wrapper {
+  & + & {
+    margin-left: 16px;
+  }
+}
+
+.share__link {
+  font-weight: 500;
+
+  &:hover {
+    color: $hover-color;
+  }
+}

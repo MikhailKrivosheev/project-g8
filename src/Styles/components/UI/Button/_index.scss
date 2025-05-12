@@ -1,0 +1,150 @@
+.button {
+  @extend %buttonTemplate;
+  @extend %button;
+  width: 255px;
+  font-size: 16px;
+  font-family: 'TT Interphases', Verdana, Geneva, sans-serif;
+
+  %form__row ~ & {
+    margin-top: 20px;
+  }
+
+  @include media-breakpoint-down(phone) {
+    padding: 0 15px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &[type='submit'] {
+    position: relative;
+
+    &:disabled {
+      background-color: $gray-600;
+    }
+  }
+}
+
+.button--strached {
+  width: fit-content;
+  padding: 12px 20px;
+  font-weight: normal;
+}
+
+.button--circle {
+  @extend %buttonCircle;
+}
+
+.button--size {
+  &-s {
+    height: auto;
+    min-height: $button-height-size-s;
+    white-space: break-spaces;
+    border-radius: $button-height-size-s / 2;
+  }
+
+  &-xs {
+    height: $button-height-size-xs;
+    border-radius: $button-height-size-xs / 2;
+  }
+
+  &-m {
+    height: $button-height-size-m;
+    border-radius: $button-height-size-m / 2;
+  }
+
+  &-l {
+    height: $button-height-size-l;
+    border-radius: $button-height-size-l / 2;
+  }
+}
+
+.button--transparent {
+  @extend %button--transparent;
+  color: var(--secondary-color);
+  background: transparent;
+  border: var(--secondary-color) solid 1px;
+
+  &:hover {
+    color: $white;
+    background-color: $green-700;
+    border: none;
+  }
+
+  &:active {
+    color: $black;
+    background-color: $green-100;
+    border: none;
+  }
+}
+
+.button--no-icons {
+  justify-content: center;
+}
+
+.button--black {
+  @extend %button-black;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.button--white {
+  @extend %button--white;
+  color: var(--secondary-color);
+  background-color: $white;
+}
+
+.button--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.button--black,
+.button--white {
+  &:hover {
+    color: $white;
+    background-color: $green-700;
+  }
+
+  &:active {
+    color: $black;
+    background-color: $green-100;
+  }
+}
+
+.button--gray {
+  @extend %button-gray;
+  color: $black;
+  background-color: $gray;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:active {
+    color: $black;
+    background-color: $green-100;
+  }
+}
+
+.button--full-width {
+  @extend %button--fullWidth;
+  width: 100%;
+}
+
+.button--grid-wide-m {
+  grid-column: span 2;
+}
+
+.button--grid-wide-l {
+  grid-column: span 3;
+}

@@ -1,0 +1,29 @@
+.collapsable__button {
+  @extend %collapsableButton;
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: $gray;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  transition: transform $transitionDefault;
+
+  &--active {
+    transform: rotate(-90deg);
+  }
+
+  &:hover {
+    background-color: var(--secondary-color);
+
+    svg {
+      fill: var(--primary-color);
+    }
+  }
+}
+
+.collapsable__wrapper {
+  overflow: hidden;
+}

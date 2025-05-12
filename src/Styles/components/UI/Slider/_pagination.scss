@@ -1,0 +1,38 @@
+.swiper-pagination {
+  %slider-pagination & {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    order: 1;
+    width: 100%;
+    margin: 0;
+
+    @include media-breakpoint-down(phone) {
+      width: calc(100vw - $section-padding-phone * 2);
+
+      %workPageSlider & {
+        left: 0;
+      }
+    }
+  }
+
+  &-bullet {
+    flex: 1;
+    height: 2px;
+    margin: 0;
+    padding: 0;
+    background: $gray-500;
+    border: none;
+  }
+
+  &-bullet-active {
+    background: $black;
+  }
+
+  @include media-breakpoint-down(phone) {
+    %winnersSectionSlider & {
+      left: $section-padding-phone !important;
+    }
+  }
+}

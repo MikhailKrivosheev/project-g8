@@ -1,0 +1,148 @@
+.modal {
+  @extend %modal;
+  z-index: 501;
+  background: transparent;
+
+  &--menu {
+    @extend %modal--menu;
+  }
+
+  &--tooltip {
+    @extend %modal--tooltip;
+  }
+}
+
+$modal__content-mobile-gap: 20px;
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  %modal--menu & {
+    height: unset;
+  }
+
+  %modal--tooltip & {
+    z-index: 700;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    display: flex;
+    width: 100%;
+    padding-top: 0;
+
+    %modal--menu & {
+      height: 100%;
+      background: rgba($black, 0.5);
+    }
+  }
+}
+
+$projects-gridRowGap: 65px;
+
+$modal__content-gap: 20px;
+
+$modal__content-mobile-gap: 20px;
+
+.modal__content {
+  position: relative;
+  z-index: 500;
+  display: flex;
+  width: 80%;
+  max-width: 830px;
+  height: fit-content;
+  padding: 40px 185px;
+  overflow: hidden;
+  background-color: $white;
+  border-radius: 80px;
+
+  %modal--tooltip & {
+    width: 100%;
+    max-width: unset;
+    height: 100%;
+    padding: 16px;
+    padding-top: 72px;
+    background: var(--primary-color);
+    border-radius: 0;
+  }
+
+  %modal--menu & {
+    width: 100%;
+    max-width: unset;
+    height: 100%;
+    padding: $header-height max(calc((100vw - 1200px) / 2 + 40px), 40px) 40px;
+    background: var(--primary-color);
+    border-radius: 0;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    padding: 40px 60px;
+
+    %modal--menu & {
+      width: 100%;
+      height: 100%;
+      padding: $header-height 15px 15px;
+    }
+  }
+}
+
+.modal__inner-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  %modal--menu & {
+    overflow-y: auto;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.sure-modal {
+  margin-top: 20px;
+  padding: 20px;
+  color: $black;
+  text-align: center;
+  background-color: $gray-500;
+  border-radius: 50px;
+  transform: translateX(200%);
+  transition: 0.3s transform;
+  will-change: transform;
+
+  &--active {
+    transform: translateX(0);
+  }
+}
+
+.sure-modal__main-text {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.sure-modal__secondary-text {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.sure-modal__button {
+  margin: 0 auto;
+}

@@ -1,0 +1,107 @@
+.icon-star {
+  width: 22px;
+  height: 22px;
+  fill: $green;
+
+  %button & {
+    margin-left: 10px;
+  }
+
+  %button--fullWidth & {
+    margin-left: 0;
+  }
+
+  %button-black:hover &,
+  %button--transparent:hover &,
+  %button--white:hover & {
+    fill: $black;
+  }
+
+  %button-black:active &,
+  %button--transparent:active &,
+  %button--white:active & {
+    fill: $green;
+  }
+
+  &--black {
+    fill: var(--secondary-color);
+  }
+
+  %nominations-info__button & {
+    margin-left: 0;
+  }
+}
+
+.icon-plus {
+  width: 22px;
+  height: 22px;
+  fill: $black;
+
+  %button & {
+    margin-left: 10px;
+  }
+
+  %button-black &,
+  %button-gray & {
+    fill: $green;
+  }
+
+  %button-black:active &,
+  %button-gray:active & {
+    fill: $black;
+  }
+
+  %nominationTitle & {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    fill: var(--secondary-color);
+  }
+}
+
+.icon-arrow {
+  width: 18px;
+  height: 14px;
+  fill: var(--secondary-color);
+
+  %button & {
+    margin-left: 10px;
+  }
+
+  %button-black:hover &,
+  %button--transparent:hover &,
+  %button--white:hover & {
+    fill: $white;
+  }
+
+  %button-gray:hover &,
+  %link:hover & {
+    fill: $green;
+  }
+
+  %button--transparent &,
+  %button-gray:active &,
+  %button--white:active & {
+    fill: $black;
+  }
+
+  %button-gray &,
+  %button-black:active &,
+  %button--transparent:active &,
+  %collapsableButton & {
+    fill: $black;
+  }
+
+  &--white {
+    fill: var(--primary-color);
+  }
+
+  &--green {
+    fill: $green;
+  }
+
+  %nominations-info__button & {
+    margin-left: 0;
+  }
+}

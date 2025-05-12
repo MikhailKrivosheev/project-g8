@@ -1,0 +1,85 @@
+$albumPreview-item-margin: 40px;
+$albumPreview-icon-size: 60px;
+$albumPreview-icon-position: 40px;
+$albumPreview-icon-position-mobile: 16px;
+$albumPreview-item-borderRadius: 8px;
+
+.album-preview {
+  display: flex;
+  justify-content: space-between;
+  margin: $content-margin 0;
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+    margin: $content-margin-mobile 0;
+  }
+
+  &__item {
+    position: relative;
+    width: calc(50% - $albumPreview-item-margin / 2);
+    border-radius: 10px;
+
+    &::before {
+      @include pseudo(relative);
+      padding-bottom: calc(100% / (3 / 2));
+    }
+
+    %albumGrid & {
+      width: 100%;
+    }
+
+    @include media-breakpoint-down(phone) {
+      width: 100%;
+
+      &:first-child {
+        margin-bottom: $content-margin-mobile;
+
+        %albumGrid & {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $albumPreview-item-borderRadius;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: $albumPreview-icon-position;
+    left: $albumPreview-icon-position;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $albumPreview-icon-size;
+    height: $albumPreview-icon-size;
+    background: $white;
+    border-radius: 50%;
+
+    > svg {
+      margin-left: 3px;
+    }
+
+    @include media-breakpoint-down(phone) {
+      bottom: $albumPreview-icon-position-mobile;
+      left: $albumPreview-icon-position-mobile;
+    }
+  }
+}
+
+.album-preview__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: $albumPreview-item-borderRadius;
+}

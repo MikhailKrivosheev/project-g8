@@ -1,0 +1,112 @@
+$juryCard-margin: 32px;
+$juryCard-phone-margin: 15px;
+
+.jury__group {
+  display: grid;
+  grid-gap: $juryCard-margin;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include media-breakpoint-down(phone) {
+    grid-gap: $juryCard-phone-margin;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.jury__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $white;
+  border-radius: 8px;
+}
+
+.jury__info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 30px;
+}
+
+.jury__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.jury__image-holder {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    @include pseudo(relative);
+    padding: 50%;
+  }
+}
+
+.jury__name {
+  margin-top: 20px;
+  color: $black;
+}
+
+.jury__job {
+  margin-top: 5px;
+  color: $gray-100;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.jury__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 50px 0;
+  padding: 0;
+
+  .section--full-width & {
+    padding: 0 40px;
+  }
+}
+
+.jury__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 32px;
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+}
+
+.jury__tag {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  color: $gray-100;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: 1px solid $gray-500;
+  border-radius: 200px;
+
+  @include media-breakpoint-down(phone) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+}
+
+.jury__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

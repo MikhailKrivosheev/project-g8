@@ -1,0 +1,113 @@
+.title {
+  position: relative;
+  margin: 0;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 1;
+
+  %contest__wrap--mts & {
+    font-size: 47px;
+    color: $white-100;
+    font-family: $fontFamilyMTS;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(phone) {
+      font-size: 25px;
+    }
+  }
+
+  @include media-breakpoint-down(phone) {
+    font-size: 48px;
+  }
+}
+
+.title--margin {
+  &--l {
+    margin: 50px 0;
+  }
+
+  &--m {
+    margin: 40px 0;
+  }
+
+  &--s {
+    margin: 30px 0;
+  }
+
+  &--xs {
+    margin: 20px 0;
+  }
+
+  &--xss {
+    margin: 10px 0;
+  }
+
+  @include media-breakpoint-down(tablet) {
+    &--l {
+      margin: 30px 0;
+    }
+
+    &--m {
+      margin: 30px 0;
+    }
+
+    &--s,
+    &--xs {
+      margin: 20px 0;
+    }
+  }
+}
+
+.title--left {
+  text-align: left;
+}
+
+.title--center {
+  text-align: center;
+}
+
+// Size's modifiers
+
+.title--l {
+  font-size: 86px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 48px;
+  }
+}
+
+.title--semi-m {
+  font-size: 32px;
+}
+
+.title--m {
+  font-size: 34px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 24px;
+  }
+}
+
+.title--semi-s {
+  font-size: 24px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 24px;
+  }
+}
+
+.title--s {
+  font-size: 16px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 18px;
+  }
+}
+
+.title--xs {
+  font-size: 14px;
+
+  @include media-breakpoint-down(phone) {
+    font-size: 14px;
+  }
+}

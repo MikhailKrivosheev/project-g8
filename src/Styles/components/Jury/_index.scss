@@ -1,0 +1,109 @@
+.jury-page {
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-top: 20px;
+  }
+}
+
+.jury-page__image {
+  max-height: 320px;
+  margin: 40px 0;
+  object-fit: cover;
+  border-radius: 80px;
+
+  @include media-breakpoint-down(phone) {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+.jury-page__description {
+  span {
+    font-size: 20px;
+  }
+}
+
+.title.jury__title {
+  margin-bottom: 40px;
+
+  .jury__ticker-section & {
+    padding: 0 max((100vw - 1200px) / 2 + 40px, 40px);
+
+    @include media-breakpoint-down(tablet) {
+      margin: 0 0 30px;
+      padding: 0 $section-padding;
+    }
+
+    @include media-breakpoint-down(phone) {
+      margin-bottom: 32px;
+      padding: 0 $section-padding-phone;
+    }
+  }
+}
+
+.jury__ticker-section {
+  overflow-y: hidden;
+}
+
+.jury__list {
+  display: flex;
+}
+
+.jury__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.jury__link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+}
+
+$juryAvatar-size: 48px;
+
+.jury__avatar {
+  flex-shrink: 0;
+  width: $juryAvatar-size;
+  height: $juryAvatar-size;
+  margin-right: 15px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.jury__ticker {
+  @extend %juryTicker;
+  box-sizing: content-box;
+  height: 48px;
+  padding-bottom: 6px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+}
+
+.jury__name {
+  font-weight: 500;
+
+  %juryTicker & {
+    margin-top: 0;
+    font-size: 34px;
+    white-space: nowrap;
+
+    @include media-breakpoint-down(phone) {
+      font-size: 44px;
+    }
+  }
+}
+
+.jury__button {
+  margin-top: 40px;
+}

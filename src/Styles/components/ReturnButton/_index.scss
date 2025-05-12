@@ -1,0 +1,20 @@
+.return-button {
+  @extend %buttonCircle;
+  margin: 20px 0;
+
+  svg {
+    transform: rotate(-180deg);
+  }
+
+  &:hover {
+    svg {
+      path {
+        fill: $hover-color;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(tablet) {
+    margin: 15px 0;
+  }
+}

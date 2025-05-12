@@ -1,0 +1,206 @@
+.conference-report {
+  & + & {
+    position: relative;
+
+    &::before {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin: 0 0 50px;
+      background: $black-100;
+      content: '';
+    }
+
+    @include media-breakpoint-down(phone) {
+      margin-top: 30px;
+
+      &::before {
+        margin: 0 0 40px;
+      }
+    }
+  }
+}
+
+.conference-report__day {
+  display: block;
+  font-weight: 500;
+  font-size: 24px;
+
+  @include media-breakpoint-down(phone) {
+    margin: 0 0 42px;
+  }
+}
+
+.conference-report__item {
+  position: relative;
+  display: flex;
+  padding: 50px 0 0 140px;
+
+  & + & {
+    margin: 50px 0 0;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+      width: calc(100% - 140px);
+      height: 2px;
+      margin-bottom: 30px;
+      background-color: var(--secondary-color);
+      content: '';
+
+      @include media-breakpoint-down(phone) {
+        width: calc(100% - 50px);
+      }
+    }
+
+    @include media-breakpoint-down(phone) {
+      .conference-report__timing-wrapper {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(phone) {
+    flex-direction: column;
+    padding: 0;
+
+    & + & {
+      margin: 30px 0;
+    }
+  }
+}
+
+.conference-report__item-title {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.conference-report__timing-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-right: 150px;
+
+  @include media-breakpoint-down(phone) {
+    order: -2;
+    margin-bottom: 20px;
+  }
+}
+
+.conference-report__item-timing {
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.conference-report__item-place {
+  font-size: 14px;
+}
+
+.conference-report__item-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 60px;
+
+  dl {
+    margin: 0;
+  }
+
+  h2 {
+    margin: 20px 0;
+  }
+
+  p {
+    margin: 0;
+    padding: 0 0 20px;
+  }
+
+  @include media-breakpoint-down(phone) {
+    margin: 20px 0 0;
+    padding: 0 0 0 50px;
+  }
+}
+
+.conference-report__item-responsible {
+  display: flex;
+
+  & + & {
+    margin: 10px 0 0;
+  }
+
+  dt {
+    margin: 0 5px 0 0;
+    color: $gray-100;
+    font-weight: 500;
+  }
+
+  dd {
+    margin: 0;
+
+    a {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}
+
+.conference-report__item-avatar {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+
+  + .conference-report__item-avatar {
+    margin-left: -20px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.conference-report__item-avatar--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  background-color: $gray-500;
+}
+
+.conference-report__item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0 0;
+}
+
+p.conference-report__item-tag {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  color: $gray-100;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  border: 1px solid $gray-500;
+  border-radius: 200px;
+}
+
+.conference-report__item-curators {
+  display: flex;
+  align-items: flex-start;
+  margin-left: auto;
+
+  @include media-breakpoint-down(phone) {
+    order: -1;
+    margin-right: auto;
+    margin-left: 0;
+    padding: 0 0 0 50px;
+  }
+}
